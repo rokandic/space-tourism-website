@@ -36,7 +36,7 @@ Users should be able to:
 
 ### Links
 
-- [Live Site](https://rokandic.github.io/practice-FM-job-listings-with-filtering/)
+- [Live Site](https://rokandic.github.io/space-tourism-website/)
 
 ### Built with
 
