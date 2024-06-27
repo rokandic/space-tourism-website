@@ -1,0 +1,58 @@
+@value tabletBreakpoint, desktopBreakpoint from  "./../breakpoints.module.css";
+
+.mobileMenuButton {
+  z-index: 100;
+  background-color: transparent;
+  width: calc(24rem / 16);
+  height: calc(21rem / 16);
+  border: none;
+  cursor: pointer;
+}
+
+.mobileMenuSvg {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.rectangles {
+  /* Size of height is relative to viewbox units(100x100). 4px out of 36px (1.5rem) of .mobileMenuButton height */
+  height: calc(100 * (4% / 36));
+  width: 100%;
+  transform-origin: center;
+  transition: all var(--transition-duration-M) ease-in-out;
+  fill: var(--light-blue);
+}
+
+.rectangleTop {
+  transform: translateY(0%);
+}
+
+.rectangleMid {
+  transform: translateY(40%);
+}
+
+.rectangleBottom {
+  transform: translateY(80%);
+}
+
+.mobileMenuButton[aria-expanded="true"] .rectangleTop {
+  transform: rotate(-45deg) translateY(40%) translateX(2%);
+}
+
+.mobileMenuButton[aria-expanded="true"] .rectangleMid {
+  transform: scaleX(10%) translateY(40%);
+}
+
+.mobileMenuButton[aria-expanded="true"] .rectangleBottom {
+  transform: rotate(45deg) translateY(40%) translateX(-2%);
+}
+
+.mobileMenuButton:hover .rectangleMid {
+  transform: scaleX(15%) translateY(40%);
+}
+
+@media tabletBreakpoint, desktopBreakpoint {
+  .mobileMenuButton {
+    display: none;
+  }
+}

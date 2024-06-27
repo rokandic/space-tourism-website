@@ -1,0 +1,125 @@
+@value tabletBreakpoint, desktopBreakpoint from  "./../breakpoints.module.css";
+
+.navigationMenuWrapper {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+  width: calc(254rem / 16);
+  backdrop-filter: blur(80px);
+  transform: translateX(100%);
+  transition: all var(--transition-duration-M) ease-out;
+}
+
+.navigationMenuWrapper[data-expanded="true"] {
+  transform: translateX(0%);
+}
+
+.menuItemsList {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  margin-top: calc(133rem / 16);
+  margin-left: 2rem;
+}
+
+.menuItem {
+  list-style: none;
+  color: white;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.menuItemNumber {
+  font-weight: bold;
+}
+
+.activeHoverBar {
+  position: absolute;
+  right: 0;
+  width: 3px;
+  height: calc(19rem / 16);
+  transition: all var(--transition-duration-M) ease-in-out;
+}
+
+.activeHoverBar[data-activepath="true"] {
+  background-color: white;
+}
+
+.activeHoverBar[data-activepath="false"] {
+  background-color: transparent;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+.itemNumberNameWrapper {
+  display: flex;
+  gap: calc(12rem / 16);
+}
+
+.links:hover .activeHoverBar[data-activepath="false"] {
+  background-color: rgba(255, 255, 255, 50%);
+}
+
+@media tabletBreakpoint, desktopBreakpoint {
+  .navigationMenuWrapper {
+    position: static;
+    width: calc(640rem / 16);
+    height: calc(96rem / 16);
+    transform: translateX(0);
+    backdrop-filter: blur(80px);
+    background-color: rgba(255, 255, 255, 5%);
+  }
+
+  .menuItemsList {
+    flex-direction: row;
+    gap: 3rem;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: 4rem;
+  }
+
+  .menuItem {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .links {
+    position: relative;
+    height: 100%;
+  }
+
+  .activeHoverBar {
+    display: static;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    transition: all var(--transition-duration-M) ease-in-out;
+  }
+}
+
+@media tabletBreakpoint {
+  .menuItemsList {
+    margin-right: 2.5rem;
+  }
+}
+
+@media desktopBreakpoint {
+  .navigationMenuWrapper {
+    width: calc(736rem / 16);
+  }
+}

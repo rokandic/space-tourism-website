@@ -1,0 +1,3 @@
+@value mobileBreakpoint: screen and (max-width: 47.99rem);
+@value tabletBreakpoint: screen and (min-width: 48rem) and (max-width: 89.99rem);
+@value desktopBreakpoint: screen and (min-width: 90rem);

@@ -1,0 +1,207 @@
+@value mobileBreakpoint, tabletBreakpoint, desktopBreakpoint from  "./../breakpoints.module.css";
+
+.contentWrapper {
+  position: absolute;
+  top: calc(112rem / 16);
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: calc(88rem / 16);
+}
+
+.headingNumber {
+  color: white;
+  opacity: 25%;
+  margin-right: 1.5rem;
+}
+
+.headingTitle {
+  color: white;
+  text-align: center;
+}
+
+.imgAndNavWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  min-height: calc(258rem / 16);
+  overflow: hidden;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  opacity: 0%;
+  transition: opacity var(--transition-duration-M) linear;
+}
+
+.image[data-active="true"] {
+  opacity: 100%;
+}
+
+.navAndDescWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.5rem 3rem 1.5rem;
+  gap: 2.5rem;
+}
+
+.navItemsWrapper {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.navItem {
+  cursor: pointer;
+
+  text-align: center;
+  line-height: 1.5rem;
+
+  list-style: none;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 25%);
+  padding: 0.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+
+  transition: all var(--transition-duration-S) ease-in-out;
+}
+
+.navItem:hover {
+  border: 1px solid rgba(255, 255, 255, 100%);
+}
+
+.navItem[data-active="true"] {
+  color: var(--very-dark-navy);
+  background-color: white;
+  border: 1px solid rgba(255, 255, 255, 100%);
+}
+
+.descWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.descTitle {
+  text-transform: uppercase;
+  color: white;
+  opacity: 50%;
+}
+
+.techName {
+  text-transform: uppercase;
+  color: white;
+}
+
+@media tabletBreakpoint, desktopBreakpoint {
+  .contentWrapper {
+    top: calc(136rem / 16);
+  }
+
+  .headingTitle {
+    text-align: left;
+    margin-left: 2.5rem;
+    letter-spacing: 0.175rem;
+  }
+
+  .imageWrapper {
+    min-height: calc(357rem / 16);
+  }
+
+  .navAndDescWrapper {
+    padding: 2rem 8rem 2.5rem 8rem;
+  }
+
+  .navItem {
+    width: 3.5rem;
+    height: 3.5rem;
+    line-height: 2.5rem;
+    font-size: 1.5rem;
+  }
+
+  .descTitle {
+    font-size: 1.5rem;
+  }
+}
+
+@media desktopBreakpoint {
+  .contentWrapper {
+    top: calc(184rem / 16);
+    padding-left: calc(165rem / 16);
+    min-height: calc(792rem / 16);
+  }
+
+  .headingTitle {
+    margin-left: 0;
+    letter-spacing: 0.25rem;
+  }
+
+  .imgAndNavWrapper {
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 2rem;
+  }
+
+  .imageWrapper {
+    order: 2;
+    min-height: calc(608rem / 16);
+    min-width: calc(600rem / 16);
+  }
+
+  .image {
+    max-width: calc(600rem / 16);
+    margin: 0 auto 0 0;
+    object-fit: cover;
+  }
+
+  .navAndDescWrapper {
+    flex-direction: row;
+    padding: 0 0.5rem 0 0;
+    gap: 4rem;
+    min-width: 50.5%;
+    max-width: 50.5%;
+  }
+
+  .navItemsWrapper {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .navItem {
+    width: 5rem;
+    height: 5rem;
+    font-size: 2rem;
+    line-height: 4rem;
+  }
+
+  .descTitle {
+    font-size: 2rem;
+  }
+
+  .descWrapper {
+    align-items: flex-start;
+  }
+
+  .description {
+    text-align: left;
+    margin-top: 0.5rem;
+  }
+}

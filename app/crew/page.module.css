@@ -1,0 +1,183 @@
+@value mobileBreakpoint, tabletBreakpoint, desktopBreakpoint from  "./../breakpoints.module.css";
+
+.contentWrapper {
+  position: absolute;
+  top: calc(88rem / 16);
+  width: 100%;
+  padding: 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.headingNumber {
+  color: white;
+  opacity: 25%;
+  margin-right: 1.5rem;
+}
+
+.headingTitle {
+  color: white;
+  text-align: center;
+}
+
+.crewMemberInformationWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4rem;
+}
+
+.crewMemberRole {
+  color: white;
+  text-transform: uppercase;
+  opacity: 50%;
+}
+
+.crewMemberName {
+  color: white;
+  margin: 0.5rem 0 1.5rem 0;
+  text-transform: uppercase;
+}
+
+.crewMemberBio {
+  min-height: calc(164rem / 16);
+}
+
+.crewMemberNavItemsWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin: 1.5rem 0 0 0;
+}
+
+.crewMemberNavItem {
+  list-style: none;
+  width: calc(10rem / 16);
+  height: calc(10rem / 16);
+  border-radius: 50%;
+  background-color: white;
+  opacity: 17.44%;
+  cursor: pointer;
+  transition: all var(--transition-duration-S) ease-in-out;
+}
+
+.crewMemberNavItem:hover {
+  opacity: 50%;
+}
+
+.crewMemberNavItem[data-active="true"] {
+  opacity: 100%;
+}
+
+.crewMemberImageWrapper {
+  position: relative;
+  margin-top: 2rem;
+}
+
+.crewMemberImage {
+  position: absolute;
+  margin: 0 auto;
+  width: auto;
+  height: auto;
+  left: 0;
+  top: 0;
+  right: 0;
+  max-width: calc(248rem / 16);
+  max-height: calc(340rem / 16);
+  opacity: 0%;
+  object-fit: contain;
+  transition: opacity var(--transition-duration-M) linear;
+  mask-image: linear-gradient(0deg, rgba(255, 255, 255, 0%) 1%, rgba(255, 255, 255, 100%) 25%);
+}
+
+.crewMemberImage[data-active="true"] {
+  opacity: 100%;
+}
+
+@media tabletBreakpoint {
+  .contentWrapper {
+    top: 6rem;
+    padding: 2.5rem 2.5rem 0 2.5rem;
+  }
+
+  .headingTitle {
+    text-align: left;
+  }
+
+  .crewMemberRole {
+    font-size: 1.5rem;
+  }
+
+  .crewMemberName {
+    margin: 1rem 0 1.5rem 0;
+  }
+
+  .crewMemberInformationWrapper {
+    padding: 0 calc(88rem / 16);
+  }
+
+  .crewMemberBio {
+    min-height: calc(117rem / 16);
+  }
+
+  .crewMemberImageWrapper {
+    margin-top: 3rem;
+  }
+
+  .crewMemberImage {
+    max-width: calc(440rem / 16);
+    max-height: calc(480rem / 16);
+  }
+}
+
+@media desktopBreakpoint {
+  .contentWrapper {
+    top: calc(136rem / 16);
+    padding: 3rem calc(165rem / 16);
+
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .headingTitle,
+  .crewMemberBio {
+    text-align: left;
+  }
+
+  .allTextWithoutImageWrapper {
+    flex-basis: 50%;
+  }
+
+  .crewMemberInformationWrapper {
+    align-items: flex-start;
+    justify-content: space-between;
+    min-height: calc(460rem / 16);
+    margin-top: calc(220rem / 16);
+  }
+
+  .crewMemberName {
+    margin-top: 1rem;
+  }
+
+  .crewMemberNavItemsWrapper {
+    gap: 2.5rem;
+  }
+
+  .crewMemberNavItem {
+    width: calc(15rem / 16);
+    height: calc(15rem / 16);
+  }
+
+  .crewMemberImageWrapper {
+    margin-top: 6rem;
+  }
+
+  .crewMemberImage {
+    max-width: calc(540rem / 16);
+    max-height: calc(660rem / 16);
+    margin: 0 auto 0 0;
+  }
+}

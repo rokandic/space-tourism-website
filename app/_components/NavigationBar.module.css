@@ -1,0 +1,61 @@
+@value tabletBreakpoint, desktopBreakpoint from  "./../breakpoints.module.css";
+
+.navigationMenu {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  right: 1.5rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: green; */
+}
+
+.logo {
+  height: calc(40rem / 16);
+  width: auto;
+}
+
+.logoLink {
+  display: flex;
+}
+
+.hLine {
+  display: none;
+}
+
+@media tabletBreakpoint, desktopBreakpoint {
+  .navigationMenu {
+    top: 0;
+    right: 0;
+  }
+
+  .logo {
+    position: relative;
+    left: 1rem;
+    height: 3rem;
+  }
+}
+
+@media desktopBreakpoint {
+  .navigationMenu {
+    top: calc(40rem / 16);
+    left: 4rem;
+  }
+
+  .logo {
+    left: 0rem;
+  }
+
+  .hLine {
+    display: block;
+    position: absolute;
+    min-width: calc(100% - (816rem / 16));
+    height: 1px;
+    left: calc(112rem / 16);
+    background-color: #979797;
+    flex-grow: 1;
+    z-index: 20;
+  }
+}

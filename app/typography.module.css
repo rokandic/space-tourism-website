@@ -1,0 +1,129 @@
+@value mobileBreakpoint, tabletBreakpoint, desktopBreakpoint from  "./breakpoints.module.css";
+
+@layer typography {
+  .headingXL {
+    font-family: var(--font-bellefair);
+    font-weight: 400;
+    color: white;
+    font-size: 5rem;
+    line-height: 171.9%;
+    letter-spacing: 0px;
+    text-transform: uppercase;
+  }
+
+  .headingL {
+    font-family: var(--font-bellefair);
+    font-weight: 400;
+    color: var(--light-blue);
+    font-size: calc(56rem / 16);
+    line-height: 114.6%;
+    letter-spacing: 0px;
+  }
+
+  .headingM {
+    font-family: var(--font-bellefair);
+    font-weight: 400;
+    color: var(--light-blue);
+    font-size: calc(24rem / 16);
+    letter-spacing: 0px;
+  }
+
+  .headingS {
+    font-family: var(--font-bellefair);
+    font-weight: 400;
+    color: var(--light-blue);
+    font-size: calc(18rem / 16);
+    letter-spacing: 0px;
+  }
+
+  .headingXS {
+    font-family: var(--font-barlow-condensed);
+    font-weight: 400;
+    color: var(--light-blue);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+  }
+
+  .subheadingL {
+    font-family: var(--font-bellefair);
+    font-weight: 400;
+    color: var(--light-blue);
+    font-size: calc(28rem / 16);
+    letter-spacing: 0px;
+  }
+
+  .subheadingS {
+    font-family: var(--font-barlow-condensed);
+    font-weight: 400;
+    color: var(--light-blue);
+    font-size: calc(14rem / 16);
+    letter-spacing: calc(2rem / 16);
+  }
+
+  .navText {
+    font-family: var(--font-barlow-condensed);
+    font-size: 1rem;
+    letter-spacing: calc(2rem / 16);
+  }
+
+  .text {
+    font-family: var(--font-barlow);
+    font-weight: 400;
+    font-size: calc(15rem / 16);
+    line-height: 180%;
+    /* letter-spacing: 0px; */
+    color: var(--light-blue);
+    text-align: center;
+  }
+
+  @media tabletBreakpoint, desktopBreakpoint {
+    .headingXS {
+      font-size: calc(20rem / 16);
+    }
+
+    .headingS {
+      font-size: calc(32rem / 16);
+    }
+
+    .headingM {
+      font-size: calc(40rem / 16);
+    }
+
+    .headingL {
+      font-size: calc(80rem / 16);
+    }
+
+    .headingXL {
+      font-size: 9rem;
+      line-height: 150%;
+    }
+
+    .text {
+      font-size: 1rem;
+    }
+  }
+
+  @media desktopBreakpoint {
+    .headingXS {
+      font-size: calc(28rem / 16);
+      letter-spacing: 0.25rem;
+    }
+
+    .headingM {
+      font-family: var(--font-bellefair);
+      font-weight: 400;
+      color: var(--light-blue);
+      font-size: calc(56rem / 16);
+      letter-spacing: 0px;
+    }
+
+    .headingL {
+      font-size: calc(96rem / 16);
+    }
+
+    .text {
+      font-size: calc(18rem / 16);
+    }
+  }
+}

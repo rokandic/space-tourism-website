@@ -1,95 +1,49 @@
-import Image from "next/image";
+import Link from "next/link";
 import styles from "./page.module.css";
+import typography from "./typography.module.css";
+import bgMobileImg from "../public/assets/home/background-home-mobile.jpg";
+import bgTabletImg from "../public/assets/home/background-home-tablet.jpg";
+import bgDesktopImg from "../public/assets/home/background-home-desktop.jpg";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+    <>
+      {/* BACKGROUND IMAGE  */}
+      {/* <div className="testClass"></div> */}
+      <picture>
+        <source
+          media={`(min-width: ${process.env.NEXT_PUBLIC_DESKTOP_BREAKPOINT})`}
+          srcSet={bgDesktopImg.src}
         />
-      </div>
+        <source
+          media={`(min-width: ${process.env.NEXT_PUBLIC_TABLET_BREAKPOINT})`}
+          srcSet={bgTabletImg.src}
+        />
+        <img alt="Background space image" src={bgMobileImg.src} className="backgroundImage" />
+      </picture>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
+      {/* CONTENT */}
+      <main className={styles.contentWrapper}>
+        <div className={styles.textWrapper}>
+          <h2 className={`${typography.headingXS} ${styles.travelHeading}`}>
+            So, you want to travel to
           </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
+          <h1 className={typography.headingXL}>Space</h1>
+          <p className={typography.text}>
+            Let’s face it; if you want to go to space, you might as well genuinely go to outer space
+            and not hover kind of on the edge of it. Well sit back, and relax because we’ll give you
+            a truly out of this world experience!
           </p>
-        </a>
-      </div>
-    </main>
+        </div>
+        {/* Explore button */}
+        <div className={styles.exploreWrapper}>
+          <Link href="/destination" className={styles.exploreLink}>
+            <div className={styles.exploreButton}>
+              <span className={`${styles.exploreText} ${typography.headingS}`}>Explore</span>
+            </div>
+          </Link>
+        </div>
+      </main>
+    </>
   );
 }

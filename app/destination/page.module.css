@@ -1,0 +1,247 @@
+@value mobileBreakpoint, tabletBreakpoint, desktopBreakpoint from  "./../breakpoints.module.css";
+
+.contentWrapper {
+  width: 100%;
+  margin-top: calc(88rem / 16);
+
+  padding: 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.planetImageWrapper {
+  position: relative;
+  margin: calc(50.5rem / 16) auto calc(58.5rem / 16);
+  width: calc(150rem / 16);
+  height: calc(150rem / 16);
+}
+
+.planetImage {
+  opacity: 0%;
+  transition: opacity var(--transition-duration-M) linear;
+}
+
+.planetImage[data-active="true"] {
+  opacity: 100%;
+}
+
+.pickDestination {
+  color: white;
+  display: flex;
+  gap: 1.5rem;
+  letter-spacing: 0.15em;
+}
+
+.headingNumber {
+  color: white;
+  opacity: 25%;
+}
+
+.navigationDescription {
+  display: static;
+}
+
+.planetNavigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.planetNavigationItem {
+  list-style: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all var(--transition-duration-S) ease-in-out;
+
+  position: relative;
+  min-height: 2rem;
+}
+
+.planetNavigationItemText {
+  transition: all var(--transition-duration-S) ease-in-out;
+}
+
+.planetNavigationItem[data-active="true"] {
+  color: white;
+}
+
+.descriptionWrapper {
+  margin-top: 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.planetNameHeading {
+  text-transform: uppercase;
+  color: white;
+}
+
+.divider {
+  width: 100%;
+  opacity: 25%;
+  color: #979797;
+  margin: 1.5rem 0;
+}
+
+.informationWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.informationItemWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: calc(12rem / 16);
+}
+
+.informationItemHeading {
+  text-transform: uppercase;
+  color: var(--light-blue);
+}
+
+.informationItem {
+  color: white;
+  text-transform: uppercase;
+}
+
+.activeHoverBar {
+  display: static;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  transition: all var(--transition-duration-M) ease-in-out;
+}
+
+.activeHoverBar[data-active="true"] {
+  background-color: white;
+}
+
+.activeHoverBar[data-active="false"] {
+  background-color: transparent;
+}
+
+.planetNavigationItem:hover .activeHoverBar[data-active="false"] {
+  background-color: rgba(255, 255, 255, 50%);
+}
+
+.planetNavigationItem:hover .planetNavigationItemText {
+  color: white;
+}
+
+@media tabletBreakpoint, desktopBreakpoint {
+  .contentWrapper {
+    position: relative;
+    margin-top: calc(136rem / 16);
+    padding: calc(40rem / 16) calc(127rem / 16);
+  }
+
+  .pickDestination {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-left: calc(40rem / 16);
+    letter-spacing: 0.14em;
+  }
+
+  .planetImageWrapper {
+    margin: calc(50.5rem / 16) auto calc(58.5rem / 16);
+    width: calc(300rem / 16);
+    height: calc(300rem / 16);
+  }
+
+  .descriptionWrapper {
+    margin-top: 1.5rem;
+  }
+
+  .informationWrapper {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .informationItemWrapper {
+    width: 100%;
+  }
+
+  .planetNavigation {
+    margin-top: 1.75rem;
+    gap: 2rem;
+  }
+
+  .planetNavigationItem {
+    font-family: var(--font-barlow-condensed);
+    font-size: 1rem;
+    letter-spacing: calc(2rem / 16);
+  }
+}
+
+@media desktopBreakpoint {
+  .contentWrapper {
+    margin-top: calc(184rem / 16);
+    padding: 0 calc(165rem / 16);
+
+    flex-direction: row;
+    gap: 2.5rem;
+  }
+
+  .titleAndImage {
+    padding: calc(135rem / 16) calc(29.5rem / 16) 0;
+  }
+
+  .pickDestination {
+    margin-left: calc(165rem / 16);
+  }
+
+  .planetImageWrapper {
+    width: 30rem;
+    height: 30rem;
+  }
+
+  .navigationDescription {
+    margin-top: calc(135rem / 16);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: calc(40rem / 16);
+    gap: 1rem;
+  }
+
+  .planetNavigation {
+    margin-top: -0.5rem;
+  }
+
+  .planetNameHeading {
+    text-align: left;
+    width: 100%;
+  }
+
+  .descriptionText {
+    min-height: calc(130rem / 16);
+    text-align: left;
+  }
+
+  .informationWrapper {
+    gap: 1rem;
+  }
+
+  .informationItemWrapper {
+    width: 50%;
+    align-items: flex-start;
+  }
+
+  .divider {
+    margin: 1.25rem 0;
+  }
+}
